@@ -1,3 +1,3 @@
 # binance-rates-updates
 
-[![Deploy](https://github.com/denyskublytskyi/binance-rates-updates/actions/workflows/deploy.yml/badge.svg)](https://github.com/denyskublytskyi/sveta-bot/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/denyskublytskyi/binance-rates-updates/actions/workflows/deploy.yml/badge.svg)](https://github.com/denyskublytskyi/binance-rates-updates/actions/workflows/deploy.yml)
