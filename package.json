@@ -6,12 +6,14 @@
   "scripts": {
     "eslint": "eslint . --fix",
     "deploy": "export $(cat .env) && cdk deploy --require-approval=never --all --profile denys.kublytskyi",
-    "install": "(cd infrastructure/functions/getBinanceRates && yarn install)"
+    "install": "(cd infrastructure/functions/getBinanceRates && yarn install)",
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8"
   },
   "dependencies": {
