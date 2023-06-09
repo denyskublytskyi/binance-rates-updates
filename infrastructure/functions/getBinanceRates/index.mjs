@@ -62,7 +62,7 @@ const _handler = async () => {
 
   const text = [
     `Курс P2P *${fiat}/${asset}*W\n`,
-    `nСередній курc: *${rates.mean}*`,
+    `Середній курc: *${rates.mean}*`,
     `Максимальний курс: *${rates.max}*`,
     `Мінімальний курс: *${rates.min}*`,
     `Кількість оголошень: *${rates.count}*`,
