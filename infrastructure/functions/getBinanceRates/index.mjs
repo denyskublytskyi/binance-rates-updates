@@ -31,7 +31,7 @@ const _handler = async () => {
           rows: 20,
           tradeType: "sell",
           asset,
-          countries: ["UA"],
+          countries: [],
           proMerchantAds: false,
           publisherType: null,
           payTypes: [],

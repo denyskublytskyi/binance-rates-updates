@@ -1,4 +1,4 @@
-name: Deploy
+name: Deployment
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  deployment:
     environment: Production
     timeout-minutes: 20
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy to AWS
         env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
