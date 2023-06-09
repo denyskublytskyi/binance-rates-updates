@@ -1,0 +1,23 @@
+{
+  "name": "binance-rates-updates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint . --fix",
+    "deploy": "export $(cat .env) && cdk deploy --require-approval=never --all --profile denys.kublytskyi",
+    "install": "(cd infrastructure/functions/getBinanceRates && yarn install)"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "aws-cdk": "^2.83.0",
+    "aws-cdk-lib": "^2.83.0",
+    "constructs": "^10.2.46",
+    "iam-policy-generator": "^2.0.4"
+  }
+}
