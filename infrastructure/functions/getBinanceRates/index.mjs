@@ -83,6 +83,16 @@ const _handler = async () => {
         chat_id: process.env.TELEGRAM_CHAT_ID,
         text,
         parse_mode: "MarkdownV2",
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: "Check in Binance",
+                url: `https://p2p.binance.com/en/trade/sell/${asset}?fiat=${fiat}&payment=all-payments`,
+              },
+            ],
+          ],
+        },
       }),
     }
   );
