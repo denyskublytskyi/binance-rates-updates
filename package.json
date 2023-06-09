@@ -10,6 +10,7 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
+    "esbuild": "^0.17.19",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
