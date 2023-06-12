@@ -8,7 +8,6 @@ import events from "aws-cdk-lib/aws-events";
 import eventsTargets from "aws-cdk-lib/aws-events-targets";
 import dynamodb from "aws-cdk-lib/aws-dynamodb";
 import iam from "aws-cdk-lib/aws-iam";
-import policyGen from "iam-policy-generator";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,10 +22,12 @@ class Stack extends cdk.Stack {
   addGetBinanceRatesLambda() {
     const ratesTable = new dynamodb.Table(this, "BinanceRates", {
       partitionKey: {
-        asset: dynamodb.AttributeType.STRING,
+        name: "asset",
+        type: dynamodb.AttributeType.STRING,
       },
       sortKey: {
-        timestamp: dynamodb.AttributeType.NUMBER,
+        name: "timestamp",
+        type: dynamodb.AttributeType.NUMBER,
       },
       pointInTimeRecovery: true,
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
@@ -50,10 +51,8 @@ class Stack extends cdk.Stack {
     lambda.addToRolePolicy(
       new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
-        actions: [
-          policyGen.Action.DYNAMODB.PUT_ITEM,
-          policyGen.Action.DYNAMODB.GET_ITEM,
-        ],
+        actions: ["dynamodb:PutItem", "dynamodb:GetItem"],
+        resources: [ratesTable.tableArn],
       })
     );
 

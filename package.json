@@ -20,7 +20,6 @@
   "dependencies": {
     "aws-cdk": "^2.83.0",
     "aws-cdk-lib": "^2.83.0",
-    "constructs": "^10.2.46",
-    "iam-policy-generator": "^2.0.4"
+    "constructs": "^10.2.46"
   }
 }
