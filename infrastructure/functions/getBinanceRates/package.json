@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.350.0",
+    "@aws-sdk/lib-dynamodb": "^3.350.0",
     "lodash": "^4.17.21",
     "node-fetch": "^3.3.1"
   }

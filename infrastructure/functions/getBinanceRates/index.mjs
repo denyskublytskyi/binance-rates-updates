@@ -1,11 +1,19 @@
 import compose from "lodash/fp/compose";
-import meanBy from "lodash/meanBy";
 import maxBy from "lodash/maxBy";
 import minBy from "lodash/minBy";
 import round from "lodash/round";
+import fpMeanBy from "lodash/fp/meanBy";
+import fpOrderBy from "lodash/fp/orderBy";
+import fpTake from "lodash/fp/take";
 import fetch from "node-fetch";
 
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
+
 import eventLogger from "../utils/eventLogger.js";
+
+const dynamoDBClient = new DynamoDBClient({});
+const documentClient = new DynamoDBDocumentClient(dynamoDBClient);
 
 const logger = console;
 
@@ -52,7 +60,13 @@ const _handler = async () => {
   } while (items.length < total);
 
   const rates = {
-    mean: round(meanBy(items, "price"), 2),
+    top10Mean: compose(
+      (n) => round(n, 2),
+      fpMeanBy("price"),
+      fpTake(10),
+      fpOrderBy(["price"], ["desc"])
+    )(items),
+    mean: compose()((n) => round(n, 2), fpMeanBy("price"))(items),
     max: maxBy(items, "price").price,
     min: minBy(items, "price").price,
     count: items.length,
@@ -60,9 +74,27 @@ const _handler = async () => {
 
   logger.info("Rates =>", rates);
 
+  const date = new Date();
+  date.setMinutes(0);
+  date.setSeconds(0);
+  date.setMilliseconds(0);
+
+  await documentClient.send(
+    new PutCommand({
+      TableName: process.env.RATES_TABLE_NAME,
+      Item: {
+        ...rates,
+        asset: "USDT",
+        timestamp: +date,
+        date: date.toISOString(),
+      },
+    })
+  );
+
   const text = [
     `Курс P2P *${fiat}/${asset}*W\n`,
     `Середній курc: *${rates.mean}*`,
+    `Середній курс серед топ 10 оголошень: *${rates.top10Mean}*`,
     `Максимальний курс: *${rates.max}*`,
     `Мінімальний курс: *${rates.min}*`,
     `Кількість оголошень: *${rates.count}*`,
