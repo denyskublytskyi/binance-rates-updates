@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":green_heart: Setup deployment environment">
+      <change beforePath="$PROJECT_DIR$/infrastructure/Stack.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/Stack.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QvbBRfALkMdPqe9GXPyg9w8CfW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "20.1.0",
+    "javascript.nodejs.core.library.typings.version": "20.1.0",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/denyskublytskyi/Workspace/home/binance-rates-updates/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/denyskublytskyi/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/231.8109.174/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure/functions/getBinanceRates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment="" />
+      <created>1686236866172</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686236866172</updated>
+      <workItem from="1686236867217" duration="9954000" />
+      <workItem from="1686292373654" duration="3020000" />
+      <workItem from="1686297962396" duration="5488000" />
+      <workItem from="1686502813437" duration="1513000" />
+    </task>
+    <task id="LOCAL-00001" summary=":tada: Initial commit">
+      <created>1686292360461</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686292360461</updated>
+    </task>
+    <task id="LOCAL-00002" summary=":tada: Initial commit">
+      <created>1686292419270</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686292419270</updated>
+    </task>
+    <task id="LOCAL-00003" summary=":tada: Initial commit">
+      <created>1686292450870</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686292450870</updated>
+    </task>
+    <task id="LOCAL-00004" summary=":wrench: Add pre commit git hook to run eslint">
+      <created>1686292855304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686292855304</updated>
+    </task>
+    <task id="LOCAL-00005" summary=":green_heart: Add Github Actions deploy timeout and update environment variables">
+      <created>1686293077635</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686293077635</updated>
+    </task>
+    <task id="LOCAL-00006" summary=":green_heart: Add environment Github Actions deploy">
+      <created>1686293490250</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686293490251</updated>
+    </task>
+    <task id="LOCAL-00007" summary=":green_heart: Add environment Github Actions deploy">
+      <created>1686294006389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686294006389</updated>
+    </task>
+    <task id="LOCAL-00008" summary=":speech_balloon: Fix message text typo">
+      <created>1686294128593</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686294128593</updated>
+    </task>
+    <task id="LOCAL-00009" summary=":sparkles: Add check in Binance button">
+      <created>1686297882440</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686297882440</updated>
+    </task>
+    <task id="LOCAL-00010" summary=":memo: Fix deploy status badge">
+      <created>1686298039475</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686298039475</updated>
+    </task>
+    <task id="LOCAL-00011" summary=":green_heart: Add esbuild to avoid build in Docker to speed up deploy">
+      <created>1686298937475</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686298937475</updated>
+    </task>
+    <task id="LOCAL-00012" summary=":sparkles: Get form all regions">
+      <created>1686311993586</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686311993586</updated>
+    </task>
+    <task id="LOCAL-00013" summary=":green_heart: Setup deployment environment">
+      <created>1686316069720</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316069720</updated>
+    </task>
+    <task id="LOCAL-00014" summary=":green_heart: Setup deployment environment">
+      <created>1686316295392</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316295392</updated>
+    </task>
+    <task id="LOCAL-00015" summary=":green_heart: Setup deployment environment">
+      <created>1686316567324</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316567324</updated>
+    </task>
+    <task id="LOCAL-00016" summary=":green_heart: Setup deployment environment">
+      <created>1686316729101</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316729101</updated>
+    </task>
+    <task id="LOCAL-00017" summary=":green_heart: Setup deployment environment">
+      <created>1686316861078</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686316861078</updated>
+    </task>
+    <task id="LOCAL-00018" summary=":green_heart: Setup deployment environment">
+      <created>1686317021098</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686317021098</updated>
+    </task>
+    <task id="LOCAL-00019" summary=":green_heart: Setup deployment environment">
+      <created>1686317363963</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686317363963</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/infrastructure/functions/getBinanceRates" />
+    </ignored-roots>
+    <MESSAGE value=":tada: Initial commit" />
+    <MESSAGE value=":wrench: Add pre commit git hook to run eslint" />
+    <MESSAGE value=":green_heart: Add Github Actions deploy timeout and update environment variables" />
+    <MESSAGE value=":green_heart: Add environment Github Actions deploy" />
+    <MESSAGE value=":speech_balloon: Fix message text typo" />
+    <MESSAGE value=":sparkles: Add check in Binance button" />
+    <MESSAGE value=":memo: Fix deploy status badge" />
+    <MESSAGE value=":green_heart: Add esbuild to avoid build in Docker to speed up deploy" />
+    <MESSAGE value=":sparkles: Get form all regions" />
+    <MESSAGE value=":green_heart: Setup deployment environment" />
+    <option name="LAST_COMMIT_MESSAGE" value=":green_heart: Setup deployment environment" />
+  </component>
+</project>
