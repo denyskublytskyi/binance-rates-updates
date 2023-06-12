@@ -66,7 +66,7 @@ const _handler = async () => {
       fpTake(10),
       fpOrderBy(["price"], ["desc"])
     )(items),
-    mean: compose()((n) => round(n, 2), fpMeanBy("price"))(items),
+    mean: compose((n) => round(n, 2), fpMeanBy("price"))(items),
     max: maxBy(items, "price").price,
     min: minBy(items, "price").price,
     count: items.length,

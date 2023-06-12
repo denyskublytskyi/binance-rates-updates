@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":sparkles: Add WebStorm project settings">
+    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":bug: Fix stack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/Stack.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/Stack.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +69,7 @@
       <workItem from="1686236867217" duration="9954000" />
       <workItem from="1686292373654" duration="3020000" />
       <workItem from="1686297962396" duration="5488000" />
-      <workItem from="1686502813437" duration="2224000" />
+      <workItem from="1686502813437" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary=":tada: Initial commit">
       <created>1686292360461</created>
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686576645745</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary=":bug: Fix stack">
+      <created>1686577328780</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686577328780</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +258,7 @@
     <MESSAGE value=":green_heart: Setup deployment environment" />
     <MESSAGE value=":sparkles: Add top 10 rates mean. Save rates to DB" />
     <MESSAGE value=":sparkles: Add WebStorm project settings" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: Add WebStorm project settings" />
+    <MESSAGE value=":bug: Fix stack" />
+    <option name="LAST_COMMIT_MESSAGE" value=":bug: Fix stack" />
   </component>
 </project>
