@@ -59,17 +59,45 @@ const _handler = async () => {
     page++;
   } while (items.length < total);
 
-  const rates = {
-    top10Mean: compose(
+  const getPayTypeItems = ({ items, payType }) =>
+    items.filter(({ tradeMethods }) =>
+      tradeMethods.some(({ identifier }) => identifier === payType)
+    );
+
+  const monobankItems = getPayTypeItems({ items, payType: "Monobank" });
+  const privatBankItems = getPayTypeItems({ items, payType: "PrivatBank" });
+  const senseBankItems = getPayTypeItems({ items, payType: "SenseSuperApp" });
+  const raiffeisenBankAvalItems = getPayTypeItems({
+    items,
+    payType: "RaiffeisenBankAval",
+  });
+
+  const getTop10Mean = (items) =>
+    compose(
       (n) => round(n, 2),
       fpMeanBy("price"),
       fpTake(10),
       fpOrderBy(["price"], ["desc"])
-    )(items),
+    )(items);
+
+  const rates = {
+    top10Mean: getTop10Mean(items),
     mean: compose((n) => round(n, 2), fpMeanBy("price"))(items),
     max: maxBy(items, "price").price,
     min: minBy(items, "price").price,
     count: items.length,
+
+    monobankMax: maxBy(monobankItems, "price").price,
+    monobankTop10Mean: getTop10Mean(monobankItems),
+
+    privatBankMax: maxBy(privatBankItems, "price").price,
+    privatBankTop10Mean: getTop10Mean(privatBankItems),
+
+    senseBankMax: maxBy(senseBankItems, "price").price,
+    senseBankTop10Mean: getTop10Mean(senseBankItems),
+
+    raiffeisenBankAvalMax: maxBy(raiffeisenBankAvalItems, "price").price,
+    raiffeisenBankAvalTop10Mean: getTop10Mean(raiffeisenBankAvalItems),
   };
 
   logger.info("Rates =>", rates);
@@ -98,6 +126,26 @@ const _handler = async () => {
     `Максимальний курс: *${rates.max}*`,
     `Мінімальний курс: *${rates.min}*`,
     `Кількість оголошень: *${rates.count}*`,
+
+    "",
+    "*Monobank:*",
+    `Середній курс серед топ 10 оголошень: *${rates.monobankTop10Mean}*`,
+    `Максимальний курс: *${rates.monobankMax}*`,
+
+    "",
+    "*Privat Bank:*",
+    `Середній курс серед топ 10 оголошень: *${rates.privatBankTop10Mean}*`,
+    `Максимальний курс: *${rates.privatBankMax}*`,
+
+    "",
+    "*Sense SuperApp:*",
+    `Середній курс серед топ 10 оголошень: *${rates.senseBankTop10Mean}*`,
+    `Максимальний курс: *${rates.senseBankMax}*`,
+
+    "",
+    "*Raiffeisen Bank:*",
+    `Середній курс серед топ 10 оголошень: *${rates.raiffeisenBankAvalTop10Mean}*`,
+    `Максимальний курс: *${rates.raiffeisenBankAvalMax}*`,
   ]
     .join("\n")
     .replaceAll(".", "\\.");

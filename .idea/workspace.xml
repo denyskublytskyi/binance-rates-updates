@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":bug: Fix stack">
+    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":bug: Fix typo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" afterDir="false" />
     </list>
@@ -69,7 +69,7 @@
       <workItem from="1686236867217" duration="9954000" />
       <workItem from="1686292373654" duration="3020000" />
       <workItem from="1686297962396" duration="5488000" />
-      <workItem from="1686502813437" duration="2864000" />
+      <workItem from="1686502813437" duration="4790000" />
     </task>
     <task id="LOCAL-00001" summary=":tada: Initial commit">
       <created>1686292360461</created>
@@ -225,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686577328780</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary=":bug: Fix typo">
+      <created>1686601319239</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686601319239</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +266,7 @@
     <MESSAGE value=":sparkles: Add top 10 rates mean. Save rates to DB" />
     <MESSAGE value=":sparkles: Add WebStorm project settings" />
     <MESSAGE value=":bug: Fix stack" />
-    <option name="LAST_COMMIT_MESSAGE" value=":bug: Fix stack" />
+    <MESSAGE value=":bug: Fix typo" />
+    <option name="LAST_COMMIT_MESSAGE" value=":bug: Fix typo" />
   </component>
 </project>
