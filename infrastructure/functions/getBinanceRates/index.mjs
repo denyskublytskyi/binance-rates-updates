@@ -120,32 +120,32 @@ const _handler = async () => {
   );
 
   const text = [
-    `Курс P2P *${fiat}/${asset}*W\n`,
-    `Середній курc: *${rates.mean}*`,
-    `Середній курс серед топ 10 оголошень: *${rates.top10Mean}*`,
-    `Максимальний курс: *${rates.max}*`,
-    `Мінімальний курс: *${rates.min}*`,
+    `Курс P2P *${fiat}/${asset}*\n`,
+    `Середній курc: *${rates.mean} грн*`,
+    `Середній курс серед топ 10 оголошень: *${rates.top10Mean} грн*`,
+    `Максимальний курс: *${rates.max} грн*`,
+    `Мінімальний курс: *${rates.min} грн*`,
     `Кількість оголошень: *${rates.count}*`,
 
     "",
     "*Monobank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.monobankTop10Mean}*`,
-    `Максимальний курс: *${rates.monobankMax}*`,
+    `Середній курс серед топ 10 оголошень: *${rates.monobankTop10Mean} грн*`,
+    `Максимальний курс: *${rates.monobankMax} грн*`,
 
     "",
     "*Privat Bank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.privatBankTop10Mean}*`,
-    `Максимальний курс: *${rates.privatBankMax}*`,
+    `Середній курс серед топ 10 оголошень: *${rates.privatBankTop10Mean} грн*`,
+    `Максимальний курс: *${rates.privatBankMax} грн*`,
 
     "",
     "*Sense SuperApp:*",
-    `Середній курс серед топ 10 оголошень: *${rates.senseBankTop10Mean}*`,
-    `Максимальний курс: *${rates.senseBankMax}*`,
+    `Середній курс серед топ 10 оголошень: *${rates.senseBankTop10Mean} грн*`,
+    `Максимальний курс: *${rates.senseBankMax} грн*`,
 
     "",
     "*Raiffeisen Bank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.raiffeisenBankAvalTop10Mean}*`,
-    `Максимальний курс: *${rates.raiffeisenBankAvalMax}*`,
+    `Середній курс серед топ 10 оголошень: *${rates.raiffeisenBankAvalTop10Mean} грн*`,
+    `Максимальний курс: *${rates.raiffeisenBankAvalMax} грн*`,
   ]
     .join("\n")
     .replaceAll(".", "\\.");
