@@ -71,6 +71,10 @@ const _handler = async () => {
     items,
     payType: "RaiffeisenBankAval",
   });
+  const aBankItems = getPayTypeItems({
+    items,
+    payType: "ABank",
+  });
 
   const getTop10Mean = (items) =>
     compose(
@@ -98,6 +102,9 @@ const _handler = async () => {
 
     raiffeisenBankAvalMax: maxBy(raiffeisenBankAvalItems, "price").price,
     raiffeisenBankAvalTop10Mean: getTop10Mean(raiffeisenBankAvalItems),
+
+    aBankMax: maxBy(aBankItems, "price").price,
+    aBankTop10Mean: getTop10Mean(aBankItems),
   };
 
   logger.info("Rates =>", rates);
@@ -146,6 +153,11 @@ const _handler = async () => {
     "*Raiffeisen Bank:*",
     `Середній курс серед топ 10 оголошень: *${rates.raiffeisenBankAvalTop10Mean} грн*`,
     `Максимальний курс: *${rates.raiffeisenBankAvalMax} грн*`,
+
+    "",
+    "*A-Bank:*",
+    `Середній курс серед топ 10 оголошень: *${rates.aBankTop10Mean} грн*`,
+    `Максимальний курс: *${rates.aBankMax} грн*`,
   ]
     .join("\n")
     .replaceAll(".", "\\.");
