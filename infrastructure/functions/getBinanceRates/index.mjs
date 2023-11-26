@@ -7,8 +7,8 @@ import fpOrderBy from "lodash/fp/orderBy";
 import fpTake from "lodash/fp/take";
 import fetch from "node-fetch";
 
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
 
 import eventLogger from "../utils/eventLogger.js";
 
@@ -160,7 +160,7 @@ const _handler = async () => {
     `Максимальний курс: *${rates.aBankMax} грн*`,
   ]
     .join("\n")
-    .replaceAll(".", "\\.");
+    .replaceAll(/([.-])/, "\\$1");
 
   logger.info("Telegram message =>", text);
 
