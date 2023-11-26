@@ -17,6 +17,34 @@ const documentClient = new DynamoDBDocumentClient(dynamoDBClient);
 
 const logger = console;
 
+const providers = [
+  {
+    payType: "Monobank",
+    name: "monobank",
+    title: "Monobank",
+  },
+  {
+    payType: "PrivatBank",
+    name: "privatBank",
+    title: "Privat Bank",
+  },
+  {
+    payType: "SenseSuperApp",
+    name: "senseBank",
+    title: "Sense SuperApp",
+  },
+  {
+    payType: "RaiffeisenBankAval",
+    name: "raiffeisenBankAval",
+    title: "Raiffeisen Bank",
+  },
+  {
+    aBank: "ABank",
+    name: "aBank",
+    title: "A-Bank",
+  },
+];
+
 const _handler = async () => {
   const items = [];
   let page = 1;
@@ -64,18 +92,6 @@ const _handler = async () => {
       tradeMethods.some(({ identifier }) => identifier === payType)
     );
 
-  const monobankItems = getPayTypeItems({ items, payType: "Monobank" });
-  const privatBankItems = getPayTypeItems({ items, payType: "PrivatBank" });
-  const senseBankItems = getPayTypeItems({ items, payType: "SenseSuperApp" });
-  const raiffeisenBankAvalItems = getPayTypeItems({
-    items,
-    payType: "RaiffeisenBankAval",
-  });
-  const aBankItems = getPayTypeItems({
-    items,
-    payType: "ABank",
-  });
-
   const getTop10Mean = (items) =>
     compose(
       (n) => round(n, 2),
@@ -91,20 +107,14 @@ const _handler = async () => {
     min: minBy(items, "price").price,
     count: items.length,
 
-    monobankMax: maxBy(monobankItems, "price").price,
-    monobankTop10Mean: getTop10Mean(monobankItems),
+    ...providers.reduce((total, { payType, name }) => {
+      const providerItems = getPayTypeItems({ items, payType });
 
-    privatBankMax: maxBy(privatBankItems, "price").price,
-    privatBankTop10Mean: getTop10Mean(privatBankItems),
+      total[`${name}Max`] = maxBy(providerItems, "price").price;
+      total[`${name}Top10Mean`] = getTop10Mean(providerItems);
 
-    senseBankMax: maxBy(senseBankItems, "price").price,
-    senseBankTop10Mean: getTop10Mean(senseBankItems),
-
-    raiffeisenBankAvalMax: maxBy(raiffeisenBankAvalItems, "price").price,
-    raiffeisenBankAvalTop10Mean: getTop10Mean(raiffeisenBankAvalItems),
-
-    aBankMax: maxBy(aBankItems, "price").price,
-    aBankTop10Mean: getTop10Mean(aBankItems),
+      return total;
+    }, {}),
   };
 
   logger.info("Rates =>", rates);
@@ -134,30 +144,17 @@ const _handler = async () => {
     `Мінімальний курс: *${rates.min} грн*`,
     `Кількість оголошень: *${rates.count}*`,
 
-    "",
-    "*Monobank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.monobankTop10Mean} грн*`,
-    `Максимальний курс: *${rates.monobankMax} грн*`,
-
-    "",
-    "*Privat Bank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.privatBankTop10Mean} грн*`,
-    `Максимальний курс: *${rates.privatBankMax} грн*`,
-
-    "",
-    "*Sense SuperApp:*",
-    `Середній курс серед топ 10 оголошень: *${rates.senseBankTop10Mean} грн*`,
-    `Максимальний курс: *${rates.senseBankMax} грн*`,
-
-    "",
-    "*Raiffeisen Bank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.raiffeisenBankAvalTop10Mean} грн*`,
-    `Максимальний курс: *${rates.raiffeisenBankAvalMax} грн*`,
-
-    "",
-    "*A-Bank:*",
-    `Середній курс серед топ 10 оголошень: *${rates.aBankTop10Mean} грн*`,
-    `Максимальний курс: *${rates.aBankMax} грн*`,
+    ...providers.reduce((total, { name, title }) => {
+      total.push(
+        "",
+        `*${title}:*`,
+        `Середній курс серед топ 10 оголошень: *${
+          rates[`${name}Top10Mean`]
+        } грн*`,
+        `Максимальний курс: *${rates[`${name}Max`]} грн*`
+      );
+      return total;
+    }, []),
   ]
     .join("\n")
     .replaceAll(/([.-])/, "\\$1");
