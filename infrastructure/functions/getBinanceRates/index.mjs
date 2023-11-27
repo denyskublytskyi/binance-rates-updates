@@ -39,7 +39,7 @@ const providers = [
     title: "Raiffeisen Bank",
   },
   {
-    aBank: "ABank",
+    payType: "ABank",
     name: "aBank",
     title: "A-Bank",
   },
