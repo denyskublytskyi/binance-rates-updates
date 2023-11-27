@@ -157,7 +157,7 @@ const _handler = async () => {
     }, []),
   ]
     .join("\n")
-    .replaceAll(/([.-])/, "\\$1");
+    .replaceAll(/([.-])/g, "\\$1");
 
   logger.info("Telegram message =>", text);
 
