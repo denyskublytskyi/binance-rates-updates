@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":bug: Fix typo">
+    <list default="true" id="98733bbd-a000-4b91-a213-24144a1638d1" name="Changes" comment=":recycle: Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/functions/getBinanceRates/index.mjs" afterDir="false" />
     </list>
@@ -26,6 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2QvbBRfALkMdPqe9GXPyg9w8CfW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,7 +42,8 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "20.1.0",
-    "javascript.nodejs.core.library.typings.version": "20.1.0",
+    "javascript.nodejs.core.library.typings.version": "20.1.7",
+    "last_opened_file_path": "/Users/denyskublytskyi/Workspace/home/binance-rates-updates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -48,7 +52,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/denyskublytskyi/Workspace/home/binance-rates-updates/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "/Users/denyskublytskyi/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/231.8109.174/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -69,7 +73,10 @@
       <workItem from="1686236867217" duration="9954000" />
       <workItem from="1686292373654" duration="3020000" />
       <workItem from="1686297962396" duration="5488000" />
-      <workItem from="1686502813437" duration="4790000" />
+      <workItem from="1686502813437" duration="5426000" />
+      <workItem from="1688254291671" duration="264000" />
+      <workItem from="1701017400920" duration="3693000" />
+      <workItem from="1704106290443" duration="204000" />
     </task>
     <task id="LOCAL-00001" summary=":tada: Initial commit">
       <created>1686292360461</created>
@@ -232,7 +239,61 @@
       <option name="project" value="LOCAL" />
       <updated>1686601319239</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=":sparkles: Add rates info by pay methods">
+      <created>1687942269312</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687942269312</updated>
+    </task>
+    <task id="LOCAL-00025" summary=":sparkles: Add currency to message template">
+      <created>1688254537004</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688254537004</updated>
+    </task>
+    <task id="LOCAL-00026" summary=":sparkles: Add A-Bank info">
+      <option name="closed" value="true" />
+      <created>1701017630911</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701017630911</updated>
+    </task>
+    <task id="LOCAL-00027" summary=":sparkles: Add A-Bank info">
+      <option name="closed" value="true" />
+      <created>1701018751089</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1701018751089</updated>
+    </task>
+    <task id="LOCAL-00028" summary=":recycle: Refactor">
+      <option name="closed" value="true" />
+      <created>1701019488001</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701019488001</updated>
+    </task>
+    <task id="LOCAL-00029" summary=":recycle: Refactor">
+      <option name="closed" value="true" />
+      <created>1701080050175</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1701080050175</updated>
+    </task>
+    <task id="LOCAL-00030" summary=":recycle: Refactor">
+      <option name="closed" value="true" />
+      <created>1701080183350</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701080183350</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +328,10 @@
     <MESSAGE value=":sparkles: Add WebStorm project settings" />
     <MESSAGE value=":bug: Fix stack" />
     <MESSAGE value=":bug: Fix typo" />
-    <option name="LAST_COMMIT_MESSAGE" value=":bug: Fix typo" />
+    <MESSAGE value=":sparkles: Add rates info by pay methods" />
+    <MESSAGE value=":sparkles: Add currency to message template" />
+    <MESSAGE value=":sparkles: Add A-Bank info" />
+    <MESSAGE value=":recycle: Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value=":recycle: Refactor" />
   </component>
 </project>

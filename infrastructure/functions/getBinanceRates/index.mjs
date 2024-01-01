@@ -43,6 +43,11 @@ const providers = [
     name: "aBank",
     title: "A-Bank",
   },
+  {
+    payType: "PUMBBank",
+    name: "pumb",
+    title: "PUMB",
+  },
 ];
 
 const _handler = async () => {
